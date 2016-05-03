@@ -38,7 +38,7 @@ run() ->
 %% @private
 time_calls(Ctx, Count) ->
     io:format("Starting: ~p~n", [Count]),
-    Start = erlang:now(),
+    Start = opt_utils:get_current_time(),
     do_calls(Ctx, Count),
     timer:now_diff(opt_utils:get_current_time(), Start) / Count.
 
