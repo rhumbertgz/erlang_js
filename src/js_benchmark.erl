@@ -38,9 +38,9 @@ run() ->
 %% @private
 time_calls(Ctx, Count) ->
     io:format("Starting: ~p~n", [Count]),
-    Start = opt_utils:get_current_time(),
+    Start = otp_utils:get_current_time(),
     do_calls(Ctx, Count),
-    timer:now_diff(opt_utils:get_current_time(), Start) / Count.
+    timer:now_diff(otp_utils:get_current_time(), Start) / Count.
 
 %% @private
 do_calls(_Ctx, 0) ->
